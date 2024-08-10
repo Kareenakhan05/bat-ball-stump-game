@@ -1,0 +1,249 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #6bd470; /* Light background color for contrast */
+  position: relative; /* Needed for absolute positioning of score container */
+}
+
+/* Container for Game Elements */
+.game-container {
+  text-align: center;
+  background: #2f6956; /* White background for the container */
+  border-radius: 20px; /* Slightly larger rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  padding: 40px; /* Increased padding */
+  max-width: 80%; /* Wider container */
+  width: 600px; /* Fixed width */
+}
+
+/* Header Styling */
+h1 {
+  color: #62f13e; /* Bright blue color for the header */
+  font-size: 3em; /* Larger font size */
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+/* Score Styling */
+#scoreContainer {
+  position: absolute;
+  top: 20px; /* Adjust top position */
+  left: 20px; /* Align to the left */
+  text-align: left; /* Align text to the left */
+  font-size: 1.5em; /* Larger font size */
+  background: #9dd8ca; /* White background for contrast */
+  padding: 10px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+#playerScore, #computerScore {
+  display: block;
+  margin: 5px 0;
+}
+
+#playerScore {
+  color: #28a745; /* Green color for player score */
+}
+
+#computerScore {
+  color: #dc3545; /* Red color for computer score */
+}
+
+/* Result Message Styling */
+#resultMessage {
+  font-size: 2em; /* Larger font size */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Multicolor Text */
+.chosen-text {
+  color: #007bff; /* Blue color */
+  font-weight: bold;
+}
+
+.computer-text {
+  color: #dc3545; /* Red color */
+  font-weight: bold;
+}
+
+.result-text {
+  color: #28a745; /* Green color */
+  font-weight: bold;
+}
+
+/* Game Button Images */
+.game-button-image {
+  width: 100px; /* Larger button images */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+button:hover img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Reset Icon */
+.reset-icon {
+  font-size: 30px; /* Larger reset icon */
+  color: #007bff; /* Blue color for reset icon */
+  transition: color 0.3s ease;
+}
+
+button:hover .reset-icon {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Button Styling */
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 15px; /* Larger margin */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.1); /* Light background on hover */
+}
+
+/* Animation Containers */
+#rainfallContainer, #bouncingBallContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interaction with animation elements */
+}
+
+.rainfall {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('images/OIP (2).jpg') no-repeat center center;
+  background-size: contain;
+  animation: fall 1s linear infinite;
+}
+
+.bouncing-ball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('images/OIP (3).jpg') no-repeat center center;
+  background-size: contain;
+  border-radius: 50%;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Animation Keyframes */
+@keyframes fall {
+  0% {
+      top: -20px;
+  }
+  100% {
+      top: 100%;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-30px);
+  }
+  60% {
+      transform: translateY(-15px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-container {
+      width: 90%;
+      padding: 30px;
+  }
+
+  .game-button-image {
+      width: 80px;
+  }
+
+  .reset-icon {
+      font-size: 24px;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+  #resultMessage {
+      font-size: 1.5em;
+  }
+
+  #scoreContainer {
+      font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+      width: 95%;
+      padding: 20px;
+  }
+
+  .game-button-image {
+      width: 60px;
+  }
+
+  .reset-icon {
+      font-size: 20px;
+  }
+
+  h1 {
+      font-size: 1.5em;
+  }
+
+  #resultMessage {
+      font-size: 1.2em;
+  }
+
+  #scoreContainer {
+      font-size: 1em;
+  }
+}
+/* Start Button Styling */
+#startButton {
+  background-color: #28a745; /* Green background */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px 30px; /* Add padding */
+  font-size: 1.2em; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+  outline: none; /* Remove default focus outline */
+}
+
+#startButton:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+#startButton:active {
+  background-color: #1e7e34; /* Even darker green on click */
+  transform: scale(1); /* Reset zoom effect on click */
+}
+
+#startButton:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus outline with blue shadow */
+}

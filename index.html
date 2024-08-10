@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bat Ball Stump Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="scoreContainer">
+        <span id="playerScore">Player Score: 0</span>
+        <span id="computerScore">Computer Score: 0</span>
+        <span id="timer">Time: 60sec</span> <!-- Timer element -->
+    </div>
+
+    <div class="game-container">
+        <h1>Bat Ball Stump Game</h1>
+
+        <p id="resultMessage">Make your choice!</p>
+
+        <button id="startButton" onclick="startGame()">Start Game</button>
+
+        <button class="hidden" onclick="playGame('Bat')">
+            <img src="images/OIP (2).jpg" alt="Bat" class="game-button-image">
+        </button>
+        <button class="hidden" onclick="playGame('Ball')">
+            <img src="images/OIP (3).jpg" alt="Ball" class="game-button-image">
+        </button>
+        <button class="hidden" onclick="playGame('Stump')">
+            <img src="images/OIP (4).jpg" alt="Stump" class="game-button-image">
+        </button>
+
+        <button onclick="resetGame()">
+            <span class="reset-icon">🔄</span>
+        </button>
+    </div>
+
+    <!-- Containers for animations -->
+    <div id="rainfallContainer" class="hidden"></div>
+    <div id="bouncingBallContainer" class="hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
